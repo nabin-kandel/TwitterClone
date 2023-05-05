@@ -1,11 +1,12 @@
-const TweetBody = () => {
+const TweetBody = ({ tweet, image }) => {
     return (
         <>
-            <p className="tweet-text">This is a sample tweet!</p>
+            <p className="tweet-text">{tweet}</p>
             <img
                 className="tweet-image"
-                src="https://placekitten.com/200/150"
+                src={image}
                 alt="Tweet Image"
+                style={{ width: "70%" }}
             />
         </>
     );
