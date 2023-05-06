@@ -33,8 +33,8 @@ const App = () => {
   }, []);
   return (
     <>
-      {users.map(({ authorname, date, tweet, image, avatar }) => {
-        return <Tweet name={authorname} username={authorname} time={date} tweet={tweet} image={image} avatar={avatar} key={authorname} />
+      {users.map(({ authorname, date, content, image, avatar, _id }) => {
+        return <Tweet name={authorname} username={'@' + authorname} time={date} tweet={content} image={image} avatar={avatar} key={_id} />
       }
       )}
     </>
