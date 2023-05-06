@@ -3,6 +3,7 @@ import Tweet from './components/Tweet';
 import axios from 'axios';
 import './App.css'
 import { useEffect, useState } from 'react';
+import UserTweet from './components/UserTweet';
 const App = () => {
   const [users, setUser] = useState([]);
 
@@ -33,6 +34,7 @@ const App = () => {
   }, []);
   return (
     <>
+      <UserTweet />
       {users.map(({ authorname, date, content, image, avatar, _id }) => {
         return <Tweet name={authorname} username={'@' + authorname} time={date} tweet={content} image={image} avatar={avatar} key={_id} />
       }

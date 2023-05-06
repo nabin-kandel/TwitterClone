@@ -1,6 +1,7 @@
 import Header from "./header";
 import TweetBody from "./tweetbody";
 import Footer from "./footer";
+import UserTweet from "./UserTweet";
 
 const Tweet = ({ name, username, time, tweet, image, avatar }) => {
     return (<div className="tweet">
