@@ -5,7 +5,7 @@ const SingleTweet = () => {
     const fetchTweet = async () => {
         const resp = await axios.get('https://react-workshop-todo.fly.dev/posts/645739147213f63d4355ab0f', {
             headers: {
-                apikey: '6457383b7213f63d43544ac0'
+                apikey: '645739147213f63d4355ab0f'
             }
         });
         setTweet(resp.data)

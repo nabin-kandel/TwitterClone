@@ -7,10 +7,10 @@ const UserTweet = ({ setShouldRefresh }) => {
         try {
             await axios.post("https://react-workshop-todo.fly.dev/posts", {
                 content: tweetContent,
-                image: 'https://sanchitpoudel.com.np/assets/image4.jpg',
+                // image: 'https://nabinkdl.com/assets/img/perfil2.jpeg',
             }, {
                 headers: {
-                    apikey: '6457383b7213f63d43544ac0'
+                    apikey: '645739147213f63d4355ab0f'
                 }
             });
             setTweetContent("");
