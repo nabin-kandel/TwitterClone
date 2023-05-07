@@ -5,12 +5,9 @@ const UserTweet = ({ setShouldRefresh }) => {
     console.log(tweetContent);
     const upload = async () => {
         try {
-            await axios.post("https://react-workshop-todo.fly.dev/posts/all", {
-                authorname: 'Sanchit Poudel',
+            await axios.post("https://react-workshop-todo.fly.dev/posts", {
                 content: tweetContent,
-                avatar: "https://sanchitpoudel.com.np/assets/logo.jpeg",
-                date: '2023',
-                image: 'https://sanchitpoudel.com.np/assets/logo.jpeg',
+                image: 'https://sanchitpoudel.com.np/assets/image4.jpg',
             }, {
                 headers: {
                     apikey: '6457383b7213f63d43544ac0'
@@ -21,6 +18,7 @@ const UserTweet = ({ setShouldRefresh }) => {
         }
         catch (e) {
             console.log(e);
+            alert('Error');
         }
     };
     const handleSubmit = () => {
