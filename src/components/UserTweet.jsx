@@ -1,17 +1,28 @@
 import { useState } from "react";
 import axios from "axios";
-const UserTweet = () => {
+const UserTweet = ({ setShouldRefresh }) => {
     let [tweetContent, setTweetContent] = useState("");
-
+    console.log(tweetContent);
     const upload = async () => {
-        await axios.post("https://react-workshop.fly.dev", {
-            authorname: 'Sanchit Poudel',
-            content: tweetContent,
-            avatar: "https://sanchitpoudel.com.np/assets/logo.jpeg",
-            date: '2023',
-            image: 'https://sanchitpoudel.com.np/assets/logo.jpeg',
-        })
-    }
+        try {
+            await axios.post("https://react-workshop-todo.fly.dev/posts/all", {
+                authorname: 'Sanchit Poudel',
+                content: tweetContent,
+                avatar: "https://sanchitpoudel.com.np/assets/logo.jpeg",
+                date: '2023',
+                image: 'https://sanchitpoudel.com.np/assets/logo.jpeg',
+            }, {
+                headers: {
+                    apikey: '6457383b7213f63d43544ac0'
+                }
+            });
+            setTweetContent("");
+            setShouldRefresh((v) => !v);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    };
     const handleSubmit = () => {
         upload();
     }
