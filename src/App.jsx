@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css'
 import { useEffect, useState } from 'react';
 import UserTweet from './components/UserTweet';
+import NavBar from './components/NavBar';
 const App = () => {
   const [users, setUser] = useState([]);
 
@@ -38,6 +39,7 @@ const App = () => {
   }, [shouldRefresh]);
   return (
     <>
+      <NavBar />
       <UserTweet setShouldRefresh={setShouldRefresh} />
       {users.map(({ user, date, content, image, _id }) => {
         return <Tweet name={user.fullname} username={'@' + user.name} time={date} tweet={content} image={image} avatar={'https://avatars.githubusercontent.com/u/' + user.githubId + '?v=4'} key={user.id} />
